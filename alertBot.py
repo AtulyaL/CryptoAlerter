@@ -30,7 +30,7 @@ for x in range(len(price)):
       msg+=watchList[x]+" "+"$"+str(price[x])+"\n"
 if(len(msg)>0):
   message = client.messages.create(
-  body=watchList[x]+" is at "+str(price[x]),
+  body=msg,
   from_="",#Twilio number
   to="" #delivery number
   )
