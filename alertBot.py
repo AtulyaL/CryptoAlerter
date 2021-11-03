@@ -24,9 +24,13 @@ for i in currencies:
     if(i['symbol'] in watchList):
         symbol.append(i['symbol'])
         price.append(i['quote']['USD']['price'])
+msg=""
 for x in range(len(price)):
     if(price[x]<=targets[x]):
-        message = client.messages.create(
-        to="", #delivery number
-        from_="",#Twilio number
-        body=watchList[x]+" is at "+str(price[x]))
+      msg+=watchList[x]+" "+"$"+str(price[x]+"\n")
+if(len(msg)>0):
+  message = client.messages.create(
+  body=watchList[x]+" is at "+str(price[x]),
+  from_="",#Twilio number
+  to="" #delivery number
+  )
