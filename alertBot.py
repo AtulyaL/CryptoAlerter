@@ -27,7 +27,7 @@ for i in currencies:
 msg=""
 for x in range(len(price)):
     if(price[x]<=targets[x]):
-      msg+=watchList[x]+" "+"$"+str(price[x]+"\n")
+      msg+=watchList[x]+" "+"$"+str(price[x])+"\n"
 if(len(msg)>0):
   message = client.messages.create(
   body=watchList[x]+" is at "+str(price[x]),
